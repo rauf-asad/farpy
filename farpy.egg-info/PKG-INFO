@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: farpy
+Version: 0.0.1
+Summary: Find and replace text in files and directories
+Home-page: https://github.com/rauf-asad/farpy
+Author: Asad Rauf
+Author-email: asadrauflashari@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Functionality
+
+```shell
+farpy --path path --filetype filetype --old "old string" --new "new_string"
+```
+
+## Arguments
+1. path -> path to file or directory
+2. filetype -> optional (only affect this filetype) Other wise affects all files in directories recursively
+3. old_string -> string to find for replacement (has to be a literal)
+4. new_string -> string to replace old string with (has to be literal)
