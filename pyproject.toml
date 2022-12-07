@@ -1,3 +1,32 @@
 [build-system]
+requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
-requires = ["setuptools", "wheel"]
+
+[project]
+name = "farpy"
+version = "0.0.1"
+description = "Find and replace strings in files like sed does"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+authors = [
+  {email = "asadrauflashari@gmail.com"},
+  {name = "Asad Rauf"}
+]
+maintainers = [
+  {name = "Asad Rauf", email = "asadrauflashari@gmail.com"}
+]
+classifiers = [
+  "Programming Language :: Python"
+]
+
+dependencies = [
+  "click>=8.1.3",
+  "colorama>=0.4.6"
+]
+
+[project.urls]
+homepage = "https://github.com/rauf-asad/farpy"
+
+[project.scripts]
+farpy = "farpy.app:cli"

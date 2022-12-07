@@ -1,13 +1,21 @@
 import click
 import os
-from farpy.application import inplace_replace
+
+
+def inplace_replace(file, old, new):
+    with open(file, 'r') as f:
+        newText=f.read().replace(old, new)
+
+    with open(file, "w") as f:
+        f.write(newText)
+
 
 @click.command()
 @click.option('--path', type=str, help='file or folder path')
 @click.option('--filetype', type=str, help='filetypes to change')
 @click.option('--old', type=str, help='string to replace')
 @click.option('--new', type=str, help='string to replace with')
-def main(path, filetype, old, new):
+def cli(path, filetype, old, new):
     if os.path.isfile(path):
         if filetype:
             if path.endswith(f'.{filetype}'):
@@ -18,6 +26,5 @@ def main(path, filetype, old, new):
                 if file.endswith(f'.{filetype}'):
                     inplace_replace(os.path.join(path, dirs, file), old, new)
 
-
 if __name__ == '__main__':
-    main()
+    pass
