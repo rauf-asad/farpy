@@ -11,10 +11,10 @@ def inplace_replace(file, old, new):
 
 
 @click.command()
-@click.option('--path', type=str, help='file or folder path')
-@click.option('--filetype', type=str, help='filetypes to change')
-@click.option('--old', type=str, help='string to replace')
-@click.option('--new', type=str, help='string to replace with')
+@click.option('--path', '-p', type=str, help='file or folder path')
+@click.option('--filetype', '-f', type=str, help='filetypes to change')
+@click.option('--old', '-o', type=str, help='string to replace')
+@click.option('--new', '-n', type=str, help='string to replace with')
 def cli(path, filetype, old, new):
     if os.path.isfile(path):
         if filetype:
